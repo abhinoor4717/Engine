@@ -6,7 +6,9 @@ extern Engine::Application* Engine::CreateApplication();
 
 int main(int agrc, char** argv) {
 
-	printf("Hello!");
+	Engine::Log::Init();
+
+	ENGINE_CORE_INFO("Initilizing Engine!");
 	auto app = Engine::CreateApplication();
 	app->Run();
 	delete app;
