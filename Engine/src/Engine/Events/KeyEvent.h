@@ -39,7 +39,7 @@ namespace Engine {
 		int m_RepeatCount;
 	};
 
-	class WNGINE_API KeyReleasedEvent : public KeyEvent
+	class ENGINE_API KeyReleasedEvent : public KeyEvent
 	{
 	public:
 		KeyReleasedEvent(int keycode)

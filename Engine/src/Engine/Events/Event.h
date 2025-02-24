@@ -4,8 +4,12 @@
 
 #include "Engine/Core.h"
 
-#include <string>
-#include <functional>
+template <>
+struct fmt::formatter<Engine::Event> : fmt::formatter<std::string> {
+    auto format(const Engine::Event& e, fmt::format_context& ctx) -> decltype(ctx.out()) {
+        return fmt::format_to(ctx.out(), "{}", e.ToString());
+    }
+};
 
 namespace Engine {
 
