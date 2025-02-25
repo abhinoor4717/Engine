@@ -3,6 +3,7 @@
 
 #include "Engine/Events/ApplicationEvent.h"
 #include "Engine/Log.h"
+#include "Engine\Events\EventFormatter.h"
 
 namespace Engine {
 
@@ -26,7 +27,10 @@ namespace Engine {
 	}
 
 	void Application::OnEvent(Event& e) {
-		ENGINE_CORE_TRACE("{0}", e.ToString());
+		if (e.GetEventType() == Engine::EventType::WindowClose) {
+			m_Running = false;
+		}
+		ENGINE_CORE_TRACE("{0}", e);
 	}
 
 }

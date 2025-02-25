@@ -4,13 +4,6 @@
 
 #include "Engine/Core.h"
 
-template <>
-struct fmt::formatter<Engine::Event> : fmt::formatter<std::string> {
-    auto format(const Engine::Event& e, fmt::format_context& ctx) -> decltype(ctx.out()) {
-        return fmt::format_to(ctx.out(), "{}", e.ToString());
-    }
-};
-
 namespace Engine {
 
 	// Events in engine are currently blocking, meaning when an event occurs it
@@ -56,6 +49,7 @@ namespace Engine {
 		{
 			return GetCategoryFlags() & category;
 		}
+		
 	protected:
 		bool m_Handled = false;
 	};
