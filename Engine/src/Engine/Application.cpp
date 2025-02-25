@@ -1,9 +1,8 @@
 #include "enginepch.h"
 #include "Application.h"
 
-#include "Engine/Events/ApplicationEvent.h"
 #include "Engine/Log.h"
-#include "Engine\Events\EventFormatter.h"
+#include "Engine/Events/EventFormatter.h"
 
 namespace Engine {
 
@@ -27,10 +26,16 @@ namespace Engine {
 	}
 
 	void Application::OnEvent(Event& e) {
-		if (e.GetEventType() == Engine::EventType::WindowClose) {
-			m_Running = false;
-		}
+		
+		EventDispatcher dispatcher(e);
+		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
+
 		ENGINE_CORE_TRACE("{0}", e);
+	}
+
+	bool Application::OnWindowClose(WindowCloseEvent& e) {
+		m_Running = false;
+		return true;
 	}
 
 }

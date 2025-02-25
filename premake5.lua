@@ -49,6 +49,7 @@ project "Engine"
 		cppdialect "C++17"
 		staticruntime "On"
 		systemversion "latest"
+		-- linkoptions { "/NODEFAULTLIB:LIBCMTD.lib", "/NODEFAULTLIB:msvcprtd.lib" }
 
 		defines
 		{
