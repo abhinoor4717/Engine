@@ -1,6 +1,7 @@
 [submodule "Engine/vendor/spdlog"]
 	path = Engine/vendor/spdlog
-	url = https://github.com/abhinoor4717/spdlog
+	url = https://github.com/abhinoor4717/spdlog.git
+	branch = main
 [submodule "Engine/vendor/GLFW"]
 	path = Engine/vendor/GLFW
 	url = https://github.com/abhinoor4717/glfw
