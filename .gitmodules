@@ -4,4 +4,5 @@
 	branch = main
 [submodule "Engine/vendor/GLFW"]
 	path = Engine/vendor/GLFW
-	url = https://github.com/abhinoor4717/glfw
+	url = https://github.com/abhinoor4717/glfw.git
+	branch = master
